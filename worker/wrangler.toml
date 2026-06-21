@@ -1,0 +1,20 @@
+# Cloudflare Worker config for the Pixel Racer Telegram bot (webhook mode).
+#
+# Deploy:
+#   cd worker
+#   npx wrangler login
+#   npx wrangler secret put BOT_TOKEN       # paste the @BotFather token
+#   npx wrangler secret put WEBHOOK_SECRET  # paste a random string
+#   npx wrangler deploy
+# Then open  https://<your-worker-url>/setup?key=<WEBHOOK_SECRET>  once.
+
+name = "pixel-racer-bot"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+
+# Public, non-secret value: the HTTPS URL that serves the game (GitHub Pages).
+[vars]
+GAME_URL = "https://grindtofreedom.github.io/Pixel-Racer/"
+
+# BOT_TOKEN and WEBHOOK_SECRET are NOT here — they are secrets, set via
+# `npx wrangler secret put <NAME>` so they never land in the repo.
