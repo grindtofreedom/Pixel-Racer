@@ -1,0 +1,14 @@
+{
+  "name": "pixel-racer-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram Mini App bot for the Pixel Racer game (zero dependencies).",
+  "type": "commonjs",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

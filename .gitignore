@@ -1,0 +1,10 @@
+# Secrets — never commit the real bot token
+.env
+bot/.env
+
+# Dependencies (the bot is zero-dependency, but just in case)
+node_modules/
+
+# OS cruft
+.DS_Store
+*.log

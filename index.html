@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>PIXEL RACER</title>
+  <!-- Telegram Mini App SDK (no-op when opened outside Telegram) -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Start / menu overlay -->
+  <div id="menu" class="overlay">
+    <h1 class="title">PIXEL&nbsp;RACER</h1>
+    <p class="subtitle">TOP-DOWN ARCADE RACING</p>
+
+    <div class="schemes">
+      <div class="scheme">
+        <h3>PLAYER 1</h3>
+        <div class="controls-help">
+          <span class="key">W A S D</span><span class="desc">Drive &amp; steer</span>
+          <span class="key">L-SHIFT</span><span class="desc">Handbrake / drift</span>
+        </div>
+      </div>
+      <div class="scheme">
+        <h3>PLAYER 2</h3>
+        <div class="controls-help">
+          <span class="key">&uarr; &larr; &darr; &rarr;</span><span class="desc">Drive &amp; steer</span>
+          <span class="key">R-SHIFT</span><span class="desc">Handbrake / drift</span>
+        </div>
+      </div>
+    </div>
+    <p class="hint">SOLO USES WASD <em>OR</em> ARROWS &middot; SPACE TO DRIFT</p>
+
+    <div class="btn-row">
+      <button id="onePlayerBtn" class="btn">1 PLAYER</button>
+      <button id="twoPlayerBtn" class="btn btn-alt">2 PLAYERS</button>
+    </div>
+    <p class="hint">3 LAPS &middot; 6 CARS &middot; ENTER = 1P &middot; "2" = 2P</p>
+  </div>
+
+  <!-- Finish overlay -->
+  <div id="finish" class="overlay hidden">
+    <h1 id="finishTitle">YOU WIN!</h1>
+    <div id="results" class="results"></div>
+    <button id="tgSendBtn" class="btn btn-tg hidden">ОТПРАВИТЬ РЕЗУЛЬТАТ</button>
+    <div class="btn-row">
+      <button id="restartBtn" class="btn">RACE AGAIN</button>
+      <button id="menuBtn" class="btn btn-alt">MENU</button>
+    </div>
+    <p class="hint">PRESS ENTER TO RESTART</p>
+  </div>
+
+  <!-- Engine modules (plain scripts, ordered by dependency) -->
+  <script src="js/utils.js"></script>
+  <script src="js/Input.js"></script>
+  <script src="js/TouchControls.js"></script>
+  <script src="js/TelegramBridge.js"></script>
+  <script src="js/AudioManager.js"></script>
+  <script src="js/SpriteFactory.js"></script>
+  <script src="js/Track.js"></script>
+  <script src="js/Camera.js"></script>
+  <script src="js/Car.js"></script>
+  <script src="js/PlayerCar.js"></script>
+  <script src="js/AICar.js"></script>
+  <script src="js/Minimap.js"></script>
+  <script src="js/HUD.js"></script>
+  <script src="js/Game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
