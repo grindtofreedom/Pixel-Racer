@@ -1,0 +1,12 @@
+# The bot image only needs bot/ — keep the game/static files out of the build.
+.git
+.gitignore
+node_modules
+*.log
+.DS_Store
+css
+js
+index.html
+server.js
+README.md
+fly.toml

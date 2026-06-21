@@ -1,0 +1,12 @@
+# Fly.io config for the Pixel Racer Telegram bot.
+# It's a long-polling worker: no public HTTP service / port is needed.
+# NOTE: `app` must be globally unique on Fly — change it if the name is taken.
+app = "pixel-racer-bot"
+primary_region = "fra"
+
+[build]
+
+# Smallest VM is plenty for a tiny long-polling bot.
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
